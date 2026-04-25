@@ -2,154 +2,55 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>阿瑀邀请你视频通话</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人网站</title>
     <style>
-        body, html {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            font-family: "Microsoft YaHei", sans-serif;
-            overflow: hidden;
-            background-color: #a31a1a;
-            color: white;
-            user-select: none;
-        }
-
-        .container {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            padding: 8vh 0 5vh 0;
-            box-sizing: border-box;
-            background: linear-gradient(rgba(163, 26, 26, 0.85), rgba(163, 26, 26, 0.85)), 
-                        url('https://www.transparenttextures.com/patterns/pinstriped-suit.png'); /* 这个url可以换背景 */
-            z-index: 10;
-        }
-
-        .avatar-box {
-            width: 140px;
-            height: 140px;
-            border-radius: 18px;
-            overflow: hidden;
-            border: 2px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
-        }
-        .avatar-box img { width: 100%; height: 100%; object-fit: cover; }
-
-        .info { text-align: center; margin-top: 25px; }
-        .info h1 { font-size: 2.2rem; margin: 0; font-weight: 500; }
-        .info p { font-size: 1.1rem; opacity: 0.8; margin-top: 12px; letter-spacing: 1px; }
-
-        .call-btn-container {
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        body{
+            font-family: "Microsoft Yahei",sans-serif;
+            background: #f5f7fa;
+            color: #333;
             text-align: center;
-            cursor: pointer;
-            z-index: 20;
+            padding: 60px 20px;
         }
-
-        @keyframes breathe {
-            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(76, 217, 100, 0.7); }
-            50% { transform: scale(1.1); box-shadow: 0 0 20px 10px rgba(76, 217, 100, 0); }
-            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(76, 217, 100, 0); }
+        .card{
+            max-width: 500px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 40px 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
         }
-
-        .circle-btn {
-            width: 85px;
-            height: 85px;
-            background-color: #4cd964;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        h1{
+            font-size: 28px;
             margin-bottom: 15px;
-            animation: breathe 2s infinite ease-in-out;
-            transition: transform 0.1s;
+            color: #222;
         }
-
-        .circle-btn img { width: 45px; height: 45px; }
-        .btn-text { font-size: 1rem; letter-spacing: 2px; }
-
-        .footer { text-align: center; }
-        .logo-img { width: 90px; height: auto; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto; }
-        .copyright { font-size: 0.75rem; opacity: 0.5; margin-top: 8px; }
-
-        #video-overlay {
-            position: fixed;
-            top: 0; left: 0; width: 100%; height: 100%;
-            background: black; display: none; z-index: 100;
+        p{
+            font-size: 16px;
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 25px;
         }
-        #video-overlay video { width: 100%; height: 100%; object-fit: cover; }
+        .btn{
+            display: inline-block;
+            padding: 12px 30px;
+            background: #2563eb;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+        .btn:hover{
+            background: #1d4ed8;
+        }
     </style>
 </head>
-<body onclick="playBGMOnce()"> <div class="container" id="main-ui">
-        <div class="top-content">
-            <div class="avatar-box">
-                <img src="b.jpg" alt="头像">
-            </div>
-            <div class="info">
-                <h1>阿瑀</h1>
-                <p>邀请你视频通话...</p>
-            </div>
-        </div>
-
-        <div class="call-btn-container" onclick="startVideo(event)">
-            <div class="circle-btn">
-                <img src="phone.svg" alt="接听">
-            </div>
-            <div class="btn-text">接听</div>
-        </div>
-
-        <div class="footer">
-            <img src="logo256.png" class="logo-img" alt="logo">
-            <div class="copyright">©2026 by阿伟</div>
-        </div>
+<body>
+    <div class="card">
+        <h1>👋 欢迎来到我的小站</h1>
+        <p>这里是我的个人主页<br>欢迎光临</p>
+        <a class="btn" href="https://github.com">Enter</a>
     </div>
-
-    <div id="video-overlay">
-        <video id="mainVideo" loop playsinline>
-            <source src="mp4.mp4" type="video/mp4">
-        </video>
-    </div>
-
-    <audio id="bgm" loop>
-        <source src="bgm.mp3" type="audio/mpeg">
-    </audio>
-
-    <script>
-        const bgm = document.getElementById('bgm');
-        const mainVideo = document.getElementById('mainVideo');
-        const mainUI = document.getElementById('main-ui');
-        const videoOverlay = document.getElementById('video-overlay');
-        
-        let hasInteracted = false;
-
-        setTimeout(() => {
-            bgm.play().catch(() => {
-                console.log("点我！！！");
-            });
-        }, 500);
-
-        function playBGMOnce() {
-            if (!hasInteracted) {
-                bgm.play();
-                hasInteracted = true;
-            }
-        }
-
-        function startVideo(event) {
-            event.stopPropagation();
-            
-            bgm.pause();
-            bgm.currentTime = 0;
-
-            mainUI.style.display = 'none';
-            videoOverlay.style.display = 'block';
-            mainVideo.play();
-        }
-    </script>
 </body>
 </html>
