@@ -7,50 +7,73 @@
     <style>
         *{margin: 0;padding: 0;box-sizing: border-box;}
         body{
-            font-family: "Microsoft Yahei",sans-serif;
-            background: #f5f7fa;
-            color: #333;
+            font-family: sans-serif;
+            background: #f0f4f8;
             text-align: center;
-            padding: 60px 20px;
+            padding: 40px 20px;
         }
-        .card{
-            max-width: 500px;
+        .box{
+            max-width: 600px;
             margin: 0 auto;
-            background: #fff;
-            padding: 40px 30px;
-            border-radius: 16px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.1);
+        }
+        .avatar{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #409eff;
         }
         h1{
-            font-size: 28px;
-            margin-bottom: 15px;
             color: #222;
+            margin-bottom: 12px;
         }
-        p{
-            font-size: 16px;
+        .desc{
             color: #666;
             line-height: 1.8;
-            margin-bottom: 25px;
+            margin-bottom: 30px;
         }
-        .btn{
-            display: inline-block;
-            padding: 12px 30px;
-            background: #2563eb;
-            color: #fff;
+        .link-item{
+            display: block;
             text-decoration: none;
-            border-radius: 30px;
+            color: #fff;
+            background: #409eff;
+            margin: 12px auto;
+            padding: 12px;
+            border-radius: 10px;
             transition: 0.3s;
+            max-width: 300px;
         }
-        .btn:hover{
-            background: #1d4ed8;
+        .link-item:hover{
+            background: #2979cd;
         }
     </style>
 </head>
 <body>
-    <div class="card">
-        <h1>👋 欢迎来到我的小站</h1>
-        <p>这里是我的个人主页<br>欢迎光临</p>
-        <a class="btn" href="https://github.com">Enter</a>
+    <div class="box">
+        <!-- https://c-ssl.duitang.com/uploads/blog/202103/21/20210321101321_9039c.jpeg-->
+        <img class="avatar" src="https://picsum.photos/300/300" alt="头像">
+
+        <h1>DWD个人主页</h1>
+        <p class="desc">
+            欢迎访问DWD的 GitHub 小站<br>
+            收藏、分享、记录日常
+        </p>
+
+        <!-- 超链接 可随便改地址和文字 -->
+        <a class="link-item" href="https://github.com" target="_blank">
+            我的 GitHub
+        </a>
+        <a class="link-item" href="https://www.bilibili.com" target="_blank">
+            哔哩哔哩
+        </a>
+        <a class="link-item" href="https://www.baidu.com" target="_blank">
+            百度搜索
+        </a>
     </div>
 </body>
 </html>
