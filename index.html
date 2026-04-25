@@ -1,130 +1,128 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>DWD的个人主页</title>
-<style>
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* 苹果配色系统 */
-:root {
-  --apple-black: #000000;
-  --apple-gray: #f5f5f7;
-  --apple-white: #ffffff;
-  --apple-text-dark: #1d1d1f;
-  --apple-text-secondary: #6e6e73;
-  --apple-blue: #0071e3;
-  --apple-blue-light: #2997ff;
-  --apple-border-soft: #d2d2d7;
-  --apple-shadow: rgba(0, 0, 0, 0.08);
-}
-
-body {
-  font-family: -apple-system, SF Pro Text, Helvetica Neue, Helvetica, Arial, sans-serif;
-  background-color: var(--apple-gray);
-  color: var(--apple-text-dark);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  padding: 20px;
-}
-
-/* 苹果风卡片 */
-.card {
-  background: var(--apple-white);
-  border-radius: 20px;
-  max-width: 420px;
-  width: 100%;
-  padding: 48px 32px;
-  box-shadow: 0 4px 20px var(--apple-shadow);
-  text-align: center;
-}
-
-/* 苹果风头像 */
-.avatar {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  border: 3px solid var(--apple-blue);
-  margin-bottom: 24px;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-.avatar:hover {
-  transform: scale(1.05);
-}
-
-/* 苹果风标题 */
-h1 {
-  font-size: 28px;
-  font-weight: 600;
-  letter-spacing: 0.2px;
-  color: var(--apple-text-dark);
-  margin-bottom: 12px;
-}
-
-/* 苹果风描述文本 */
-.desc {
-  font-size: 17px;
-  line-height: 1.47;
-  color: var(--apple-text-secondary);
-  margin-bottom: 32px;
-}
-
-/* 苹果风胶囊按钮 */
-.btn {
-  display: block;
-  width: 100%;
-  padding: 14px 0;
-  margin-bottom: 16px;
-  border-radius: 980px;
-  font-size: 17px;
-  font-weight: 600;
-  text-decoration: none;
-  background-color: var(--apple-blue);
-  color: #fff;
-  transition: background-color 0.3s ease;
-}
-.btn:hover {
-  background-color: #0066cc;
-}
-
-/* 苹果风底部提示 */
-.tip {
-  margin-top: 28px;
-  font-size: 12px;
-  color: var(--apple-text-secondary);
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人主页</title>
+    <style>
+        *{margin: 0;padding: 0;box-sizing: border-box;}
+        body{
+            font-family: sans-serif;
+            background: #f0f4f8;
+            text-align: center;
+            padding: 40px 20px;
+            overflow-x: hidden;
+        }
+        /* 飘落粒子互动 */
+        .fall-item{
+            position: fixed;
+            top: -50px;
+            pointer-events: none;
+            animation: fall linear infinite;
+            opacity: 0.6;
+        }
+        @keyframes fall{
+            0%{transform: translateY(0) rotate(0deg);}
+            100%{transform: translateY(100vh) rotate(360deg);}
+        }
+        .box{
+            max-width: 600px;
+            margin: 0 auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 6px 25px rgba(0,0,0,0.08);
+        }
+        .avatar{
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #409eff;
+            transition: all 0.4s ease;
+            cursor: pointer;
+        }
+        /* 头像互动 */
+        .avatar:hover{
+            transform: scale(1.08) rotate(3deg);
+            box-shadow: 0 0 20px #409eff;
+        }
+        h1{
+            color: #222;
+            margin-bottom: 12px;
+            transition: 0.3s;
+        }
+        h1:hover{
+            color: #409eff;
+        }
+        .desc{
+            color: #666;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+        .link-item{
+            display: block;
+            text-decoration: none;
+            color: #fff;
+            background: #409eff;
+            margin: 12px auto;
+            padding: 12px;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            max-width: 300px;
+        }
+        /* 按钮高级互动 */
+        .link-item:hover{
+            background: #1d7bdb;
+            transform: translateY(-4px);
+            box-shadow: 0 6px 16px rgba(64,158,255,0.35);
+        }
+        .tips{
+            margin-top: 35px;
+            font-size: 14px;
+            color: #999;
+        }
+    </style>
 </head>
-
 <body>
-<div class="card">
-  <img class="avatar" src="https://extensive-rose-4fdwde3nim.edgeone.app/1776434346364.jpeg" alt="头像">
-  <h1>DWD的个人主页</h1>
-  <p class="desc">欢迎访问我的 GitHub 小站<br>收藏、分享、记录日常</p>
+    <div class="box">
+        <!-- 保留你专属头像 -->
+        <img class="avatar" src="https://extensive-rose-4fdwde3nim.edgeone.app/1776434346364.jpeg" alt="头像">
 
-  <a class="btn" href="https://github.com/daiw86112-ship-it" target="_blank">我的 GitHub</a>
-  <a class="btn" href="https://bilibili.com" target="_blank">哔哩哔哩</a>
-  <a class="btn" href="https://www.baidu.com" target="_blank">百度搜索</a>
+        <h1>我的个人主页</h1>
+        <p class="desc">
+            欢迎访问我的 GitHub 小站<br>
+            收藏、分享、记录日常
+        </p>
 
-  <p class="tip">✨ 互动模式已开启 · 轻点头像体验</p>
-</div>
+        <a class="link-item" href="https://github.com" target="_blank">我的 GitHub</a>
+        <a class="link-item" href="https://www.bilibili.com" target="_blank">哔哩哔哩</a>
+        <a class="link-item" href="https://www.baidu.com" target="_blank">百度搜索</a>
 
-<script>
-// 苹果风轻互动
-const avatar = document.querySelector('.avatar');
-avatar.addEventListener('click', () => {
-  alert('👋 欢迎来到 DWD 的个人主页');
-});
-</script>
+        <p class="tips">✨ 互动模式已开启 · 轻点头像 / 悬浮按钮</p>
+    </div>
+
+    <!-- 动态飘落特效 自动互动 -->
+    <script>
+        // 随机飘落小元素
+        const chars = ['✦','✧','◈','◇','✩'];
+        setInterval(()=>{
+            const el = document.createElement('div');
+            el.className = 'fall-item';
+            el.innerText = chars[Math.floor(Math.random()*chars.length)];
+            el.style.left = Math.random()*100 + 'vw';
+            el.style.fontSize = Math.random()*12+8+'px';
+            el.style.animationDuration = Math.random()*5+6+'s';
+            document.body.appendChild(el);
+            setTimeout(()=>el.remove(),12000);
+        },400);
+
+        // 点击头像弹窗互动
+        const avatar = document.querySelector('.avatar');
+        avatar.onclick = function(){
+            alert('👋 欢迎来到我的创意小站！');
+        }
+    </script>
 </body>
 </html>
