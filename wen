@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>内部导航门户</title>
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "微软雅黑", "PingFang SC", sans-serif;
+    background-color: #f0f2f5;
+    min-height: 100vh;
+    padding: 60px 20px;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.top-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.top-title h1 {
+    font-size: 36px;
+    color: #1f2937;
+    margin-bottom: 12px;
+}
+
+.top-title p {
+    color: #6b7280;
+    font-size: 16px;
+}
+
+/* 宫格布局 两排/四格一排 自由调 */
+.grid-box {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+}
+
+.grid-item {
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 40px 20px;
+    text-align: center;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.grid-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+}
+
+.grid-item h3 {
+    font-size: 20px;
+    color: #1f2937;
+    margin-bottom: 8px;
+}
+
+.grid-item span {
+    font-size: 14px;
+    color: #6b7280;
+}
+
+.footer {
+    text-align: center;
+    margin-top: 60px;
+    color: #9ca3af;
+    font-size: 13px;
+}
+
+/* 适配手机 自动变单列 */
+@media (max-width: 768px) {
+    .grid-box {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <div class="top-title">
+        <h1>内部综合导航门户</h1>
+        <p>内网系统 · 快速访问入口 · 内部专用</p>
+    </div>
+
+    <div class="grid-box">
+        <!-- 内部链接 自行改地址和文字 -->
+        <a class="grid-item" href="http://192.168.1.100">
+            <h3>内部业务系统</h3>
+            <span>日常办公业务入口</span>
+        </a>
+
+        <a class="grid-item" href="http://192.168.1.101">
+            <h3>文件共享服务</h3>
+            <span>内部资料/文件存储</span>
+        </a>
+
+        <a class="grid-item" href="http://192.168.1.102">
+            <h3>管理后台</h3>
+            <span>系统管理与配置</span>
+        </a>
+
+        <a class="grid-item" href="http://192.168.1.103">
+            <h3>监控运维平台</h3>
+            <span>设备状态全网监控</span>
+        </a>
+
+        <a class="grid-item" href="https://daiw86112-ship-it.github.io/new2/">
+            <h3>子页面入口</h3>
+            <span>个人拓展页面</span>
+        </a>
+
+        <a class="grid-item" href="#">
+            <h3>预留站点</h3>
+            <span>待添加内部系统</span>
+        </a>
+    </div>
+
+    <div class="footer">
+        内部专属导航系统 © 2026
+    </div>
+</div>
+
+</body>
+</html>
